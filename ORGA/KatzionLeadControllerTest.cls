@@ -1,5 +1,6 @@
 @istest
 public class KatzionLeadControllerTest {
+    @testsetup()
     public static void createdata()
     {
         list<lead> lds = new list<lead>();
