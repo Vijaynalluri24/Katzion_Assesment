@@ -1,16 +1,5 @@
 @istest
 public class syncontactsTest {
-public static void createdata()
-{
-    list<contact> crs = new list<contact>();
-    for(integer i=1;i<10;i++)
-    {
-        contact c = new contact();
-        c.LastName='Test'+i;
-        crs.add(c);
-    }
-    insert crs;
-}
     public static testmethod void testsync()
     {
         test.setmock(HttpCalloutMock.class,new contactsyncmock());
