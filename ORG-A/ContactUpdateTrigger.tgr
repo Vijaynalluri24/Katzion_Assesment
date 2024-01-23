@@ -1,36 +1,26 @@
-trigger ContactUpdateTrigger on Contact (after update) 
+trigger ContactUpdateTrigger on Contact (before update) 
 {
-    if(trigger.isafter && trigger.isupdate)
+    if(trigger.isbefore && trigger.isupdate)
     {
-       list<contact> toupdatecons=new list<contact>();
     for(contact con:trigger.new)
     {
         contact oldRecord = Trigger.OldMap.Get(con.Id);
-         contact newdata = new contact();   
+            
             // Check whether the record is really updated or not..
             if( ((oldRecord.firstname != con.firstname) ||
                		(oldRecord.lastname != con.lastname) ||
+                 (oldRecord.phone != con.phone)||
                			(oldRecord.fax != con.fax) ||
                				(oldRecord.email != con.email) ||
                					(oldRecord.Description != con.Description) ||
                						(oldRecord.Department != con.Department))&&con.sync__c!=false)
             {
-                // Get the Updated Record Ids...
-                newdata.Id=con.Id;
-               	newdata.sync__c=false;
+              
+                con.sync__c=false;
                 
-                toupdatecons.add(newdata);
             }
         
     }
-        if(!toupdatecons.isempty())
-        {
-             update toupdatecons;
-        }
-    	else
-        {
-            system.debug('No data');
-        }
     }
     
 }
