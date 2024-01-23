@@ -70,7 +70,7 @@ public static testmethod void testinsert()
        Test.startTest();
         RestRequest req = new RestRequest();
         req.requestURI = '/services/apexrest/conservice';
-        req.httpMethod = 'POST';
+        req.httpMethod = 'PATCH';
     req.addheader('Content-Type','application/json');
     req.addheader('Accept','application/json');
     req.requestBody = Blob.valueOf(requestBody);
@@ -92,7 +92,7 @@ public static testmethod void testinsert()
        Test.startTest();
         RestRequest req = new RestRequest();
         req.requestURI = '/services/apexrest/conservice';
-        req.httpMethod = 'POST';
+        req.httpMethod = 'PATCH';
     req.addheader('Content-Type','application/json');
     req.addheader('Accept','application/json');
     req.requestBody = Blob.valueOf(requestBody);
@@ -114,7 +114,7 @@ public static testmethod void testinsert()
        Test.startTest();
         RestRequest req = new RestRequest();
         req.requestURI = '/services/apexrest/conservice';
-        req.httpMethod = 'POST';
+        req.httpMethod = 'PATCH';
     req.addheader('Content-Type','application/json');
     req.addheader('Accept','application/json');
     req.requestBody = Blob.valueOf(requestBody);
@@ -136,7 +136,7 @@ public static testmethod void testinsert()
        Test.startTest();
         RestRequest req = new RestRequest();
         req.requestURI = '/services/apexrest/conservice';
-        req.httpMethod = 'POST';
+        req.httpMethod = 'PATCH';
     req.addheader('Content-Type','application/json');
     req.addheader('Accept','application/json');
     req.requestBody = Blob.valueOf(requestBody);
