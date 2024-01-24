@@ -1,5 +1,5 @@
 public with sharing class syncontacts {
-    public static string getres(string reqbody)
+    public static string getres(string reqbody,string token)
     {
         http oh=new http();
             httprequest ore = new httprequest();
@@ -7,7 +7,7 @@ public with sharing class syncontacts {
             ore.setMethod('PATCH');
             ore.setbody(reqbody);
             ore.setendpoint('https://mindful-wolf-te18p4-dev-ed.trailblaze.my.salesforce.com/services/apexrest/conservice');
-            ore.setHeader('Authorization','OAuth '+gettoken());
+            ore.setHeader('Authorization','OAuth '+token);
             ore.setHeader('Content-Type','application/json');
             ores=oh.send(ore);
             return(ores.getbody());
@@ -46,12 +46,13 @@ public with sharing class syncontacts {
         {
         string accesstoken =gettoken();
         system.debug(lstcons);
-        string reqbody=system.json.serialize(lstcons);
-        system.debug(reqbody);
-        string res=getres(reqbody);
+        
          system.debug(accesstoken);
          if(accesstoken != null)
          {
+        string reqbody=system.json.serialize(lstcons);
+        system.debug(reqbody);
+        string res=getres(reqbody,accesstoken);
             
             if(res=='"SUCCESS"')
             {
