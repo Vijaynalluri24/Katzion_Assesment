@@ -28,10 +28,10 @@ public with sharing class katzionleadcontroller {
                 return [select id,firstname,lastname,phone,rating,leadsource from lead ORDER BY firstname Limit :ps OFFSET :offset ];
             }  
     }
-    @AuraEnabled(cacheable=true)
+   /* @AuraEnabled(cacheable=true)
     public static list<lead> getallleads(integer ps,integer cp)
     {
         integer offset=(cp-1)*ps;
         return [select id,firstname,lastname,phone,rating,leadsource from lead ORDER BY firstname Limit :ps OFFSET :offset ];
-    }
+    }*/
     }
