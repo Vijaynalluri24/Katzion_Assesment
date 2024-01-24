@@ -11,7 +11,7 @@ public class syncontactsTest {
     public static testmethod void testinsert()
     {
         test.setmock(HttpCalloutMock.class,new insertconmock());
-           string result= syncontacts.getres('{"attributes":{"type":"Contact","url":"/services/data/v59.0/sobjects/Contact/0035h00001KnKNGAA3"},"CleanStatus":"Pending","LastName":"CHECK","FirstName":"function changed","OwnerId":"0055h00000BMYvAAAX","sync__c":true,"Id":"0035h00001KnKNGAA3"}');
+           string result= syncontacts.getres('{"attributes":{"type":"Contact","url":"/services/data/v59.0/sobjects/Contact/0035h00001KnKNGAA3"},"CleanStatus":"Pending","LastName":"CHECK","FirstName":"function changed","OwnerId":"0055h00000BMYvAAAX","sync__c":true,"Id":"0035h00001KnKNGAA3"}','FAKE_TOKEN');
         	system.assertEquals('{"instance_url":"https://login.salesforce.com/services/oauth2/token","body":"FAKE_TOKEN"}', result);
         //createdata();
     }
