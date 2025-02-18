@@ -15,7 +15,6 @@
 
 .layout
 {
-    
     padding-left: 3px;
     padding-right: 3px;
     padding-top: 3px;
@@ -27,6 +26,8 @@
     border-color: rgb(25, 0, 255);
     border-style: double;
     border-width: 3px;
+
+
 
 }
 .data
