@@ -11,6 +11,7 @@ const cols=[
     {label:'RATING',fieldName:'Rating',type:'text'},
     {label:'LEAD SOURCE',fieldName:'LeadSource',type:'text'}
 ];
+
 export default class Katzionleadlwc extends LightningElement {
     data;
     label;
